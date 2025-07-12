@@ -30,3 +30,11 @@ test {
     useJUnitPlatform()
 }
 
+task runMainOne(type: JavaExec) {
+    group = 'application'
+    mainClass = 'org.hivekv.RocksDbCli'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+
+
