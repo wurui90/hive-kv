@@ -12,6 +12,7 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.rocksdb:rocksdbjni:10.2.1'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -30,7 +31,7 @@ test {
     useJUnitPlatform()
 }
 
-task runMainOne(type: JavaExec) {
+task runRocksDbCli(type: JavaExec) {
     group = 'application'
     mainClass = 'org.hivekv.RocksDbCli'
     classpath = sourceSets.main.runtimeClasspath
